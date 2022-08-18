@@ -1,5 +1,6 @@
-# recuperacao-da-informacao-em-multiplios-arquivos
-Pesquisa Vetorial, Booleana e Probabilista utilizando Java com Apache Lucene
+# Recuperacao da Informacao em Multiplios Arquivos
+
+Pesquisa Vetorial, Booleana e Probabilista utilizando Java com Apache Lucene.
 
 O objetivo desse projeto é recuperar documentos através de técnicas de consultas consagradas, como consultas booleanas e consultas utilizando espaços vetoriais. Aqui tem-se um conjuntos de documentos .htm que serão recuperados atráves de consultas pelo usuário.
 
