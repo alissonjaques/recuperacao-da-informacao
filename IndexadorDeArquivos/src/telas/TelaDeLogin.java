@@ -52,16 +52,16 @@ public class TelaDeLogin extends javax.swing.JDialog { // declaração da classe
         lTitulo.setText("Login ORI");
 
         lUsuario.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
-        lUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/login (1).png"))); // NOI18N
+        lUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/user32.png"))); // NOI18N
         lUsuario.setText("Usuário:");
 
         lSenha.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
-        lSenha.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/senha.png"))); // NOI18N
+        lSenha.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/password32.png"))); // NOI18N
         lSenha.setText("Senha:");
 
         pfSenha.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
 
-        btnConfirmar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/confirme.png"))); // NOI18N
+        btnConfirmar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/oksmall16.png"))); // NOI18N
         btnConfirmar.setText("Confirmar");
         btnConfirmar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -69,7 +69,7 @@ public class TelaDeLogin extends javax.swing.JDialog { // declaração da classe
             }
         });
 
-        btnCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/cancelar.png"))); // NOI18N
+        btnCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Cancel.png"))); // NOI18N
         btnCancelar.setText("Cancelar");
         btnCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -92,12 +92,14 @@ public class TelaDeLogin extends javax.swing.JDialog { // declaração da classe
                 .addGroup(pLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pLoginLayout.createSequentialGroup()
                         .addComponent(btnConfirmar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(18, 18, 18)
                         .addComponent(btnCancelar)
-                        .addGap(5, 5, 5))
-                    .addComponent(tfUsuario)
-                    .addComponent(pfSenha))
-                .addGap(103, 103, 103))
+                        .addContainerGap(101, Short.MAX_VALUE))
+                    .addGroup(pLoginLayout.createSequentialGroup()
+                        .addGroup(pLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(tfUsuario)
+                            .addComponent(pfSenha))
+                        .addGap(103, 103, 103))))
             .addGroup(pLoginLayout.createSequentialGroup()
                 .addGap(161, 161, 161)
                 .addComponent(lTitulo)
@@ -116,11 +118,11 @@ public class TelaDeLogin extends javax.swing.JDialog { // declaração da classe
                 .addGroup(pLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lSenha)
                     .addComponent(pfSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(pLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnConfirmar)
                     .addComponent(btnCancelar))
-                .addContainerGap())
+                .addContainerGap(27, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

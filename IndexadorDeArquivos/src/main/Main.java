@@ -1,5 +1,8 @@
 package main;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.UnsupportedLookAndFeelException;
 import telas.TelaPrincipal;
 
 /**
@@ -18,7 +21,12 @@ public class Main {
      * mas que neste caso serão ignorados
      */
     public static void main(String args[]){
-        TelaPrincipal tela = new TelaPrincipal();
-        tela.setVisible(true);    
+        TelaPrincipal tela;
+        try {
+            tela = new TelaPrincipal();
+            tela.setVisible(true);
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }            
     }
 } // fim do método Main

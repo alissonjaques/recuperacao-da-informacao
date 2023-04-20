@@ -2,7 +2,6 @@ package telas;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JOptionPane;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -12,6 +11,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import javax.swing.ImageIcon;
 import javax.swing.table.DefaultTableModel;
 import org.jsoup.Jsoup;
 import utils.BibliotecaDeMetodos;
@@ -37,6 +37,7 @@ public class TelaOcorrencias extends javax.swing.JInternalFrame { // declara a c
      * seus campos com valores default.
      */
     public TelaOcorrencias() {
+        this.setFrameIcon(new ImageIcon("src\\img\\auditoria_32.png"));
         botao = false;
         palavras = new ArrayList<>();
         numeroDeOcorrencias = new ArrayList<>();
@@ -497,13 +498,15 @@ public class TelaOcorrencias extends javax.swing.JInternalFrame { // declara a c
         jTocorrencia = new javax.swing.JTable();
         jBgravar = new javax.swing.JButton();
         jBlimpar = new javax.swing.JButton();
-        jBsair = new javax.swing.JButton();
 
+        setClosable(true);
         setIconifiable(true);
+        setMaximizable(true);
         setTitle("Gerador de Índice Invertido");
 
         JLResultado.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        JLResultado.setText("Ranking de ocorrências");
+        JLResultado.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        JLResultado.setText("Ranking de ocorrências de Termos");
 
         jTocorrencia.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jTocorrencia.setModel(new javax.swing.table.DefaultTableModel(
@@ -531,8 +534,8 @@ public class TelaOcorrencias extends javax.swing.JInternalFrame { // declara a c
         });
         jScrollPane1.setViewportView(jTocorrencia);
 
-        jBgravar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jBgravar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/gerar.png"))); // NOI18N
+        jBgravar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jBgravar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/refresh.png"))); // NOI18N
         jBgravar.setText("Gerar Índice ");
         jBgravar.setMaximumSize(new java.awt.Dimension(83, 23));
         jBgravar.setMinimumSize(new java.awt.Dimension(83, 23));
@@ -543,7 +546,7 @@ public class TelaOcorrencias extends javax.swing.JInternalFrame { // declara a c
             }
         });
 
-        jBlimpar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jBlimpar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jBlimpar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/limpar-limpo.png"))); // NOI18N
         jBlimpar.setText("Limpar");
         jBlimpar.setEnabled(false);
@@ -553,34 +556,19 @@ public class TelaOcorrencias extends javax.swing.JInternalFrame { // declara a c
             }
         });
 
-        jBsair.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jBsair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/sair.png"))); // NOI18N
-        jBsair.setText("Sair");
-        jBsair.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBsairActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPResultadoLayout = new javax.swing.GroupLayout(jPResultado);
         jPResultado.setLayout(jPResultadoLayout);
         jPResultadoLayout.setHorizontalGroup(
             jPResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPResultadoLayout.createSequentialGroup()
-                .addGap(104, 104, 104)
-                .addComponent(JLResultado)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPResultadoLayout.createSequentialGroup()
-                .addContainerGap(28, Short.MAX_VALUE)
-                .addGroup(jPResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addContainerGap(20, Short.MAX_VALUE)
+                .addGroup(jPResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(jPResultadoLayout.createSequentialGroup()
-                        .addGap(7, 7, 7)
-                        .addComponent(jBgravar, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jBlimpar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jBsair, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 417, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jBgravar, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 251, Short.MAX_VALUE)
+                        .addComponent(jBlimpar))
+                    .addComponent(JLResultado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 480, Short.MAX_VALUE))
                 .addGap(28, 28, 28))
         );
         jPResultadoLayout.setVerticalGroup(
@@ -589,13 +577,12 @@ public class TelaOcorrencias extends javax.swing.JInternalFrame { // declara a c
                 .addContainerGap()
                 .addComponent(JLResultado)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(14, 14, 14)
                 .addGroup(jPResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jBsair)
-                    .addComponent(jBlimpar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jBgravar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                    .addComponent(jBgravar, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jBlimpar))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -606,7 +593,9 @@ public class TelaOcorrencias extends javax.swing.JInternalFrame { // declara a c
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPResultado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPResultado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
@@ -617,14 +606,6 @@ public class TelaOcorrencias extends javax.swing.JInternalFrame { // declara a c
         getjBgravar().setEnabled(true);
         getjBlimpar().setEnabled(false);
     }//GEN-LAST:event_jBlimparActionPerformed
-
-    private void jBsairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBsairActionPerformed
-        int op = JOptionPane.showConfirmDialog(this, "Deseja mesmo sair?", "Sair", JOptionPane.OK_CANCEL_OPTION);
-
-        if (op == 0) {
-            dispose();
-        }
-    }//GEN-LAST:event_jBsairActionPerformed
 
     private void jBgravarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBgravarActionPerformed
         try {
@@ -641,7 +622,6 @@ public class TelaOcorrencias extends javax.swing.JInternalFrame { // declara a c
     private javax.swing.JLabel JLResultado;
     private javax.swing.JButton jBgravar;
     private javax.swing.JButton jBlimpar;
-    private javax.swing.JButton jBsair;
     private javax.swing.JPanel jPResultado;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTocorrencia;
@@ -687,20 +667,6 @@ public class TelaOcorrencias extends javax.swing.JInternalFrame { // declara a c
      */
     public void setjBlimpar(javax.swing.JButton jBlimpar) {
         this.jBlimpar = jBlimpar;
-    }
-
-    /**
-     * @return the jBsair
-     */
-    public javax.swing.JButton getjBsair() {
-        return jBsair;
-    }
-
-    /**
-     * @param jBsair the jBsair to set
-     */
-    public void setjBsair(javax.swing.JButton jBsair) {
-        this.jBsair = jBsair;
     }
 
     /**

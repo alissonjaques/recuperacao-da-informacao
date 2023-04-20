@@ -6,6 +6,9 @@
       <SubComponents>
         <Menu class="javax.swing.JMenu" name="jmLogin">
           <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/img/PessoaFisica.png"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Login"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Dialog" size="18" style="1"/>
@@ -18,7 +21,7 @@
                   <Font name="Dialog" size="14" style="1"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/img/login (1).png"/>
+                  <Image iconType="3" name="/img/user32.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Login"/>
               </Properties>
@@ -32,7 +35,7 @@
                   <Font name="Dialog" size="14" style="1"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/img/sair (1).png"/>
+                  <Image iconType="3" name="/img/close_32.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Sair"/>
               </Properties>
@@ -44,6 +47,9 @@
         </Menu>
         <Menu class="javax.swing.JMenu" name="jmIndiceInvertido">
           <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/img/refresh_1.png"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="&#xcd;ndice Invertido"/>
             <Property name="enabled" type="boolean" value="false"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -60,7 +66,7 @@
                   <Font name="Dialog" size="14" style="1"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/img/gerirJM.png"/>
+                  <Image iconType="3" name="/img/report_32.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Gerar"/>
               </Properties>
@@ -72,6 +78,9 @@
         </Menu>
         <Menu class="javax.swing.JMenu" name="jmconsuta">
           <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/img/pesquisa32.png"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Consulta"/>
             <Property name="enabled" type="boolean" value="false"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -85,7 +94,7 @@
                   <Font name="Dialog" size="14" style="1"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/img/pesquisa-booleana.png"/>
+                  <Image iconType="3" name="/img/srch_32.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Pesquisa Booleana"/>
               </Properties>
@@ -99,7 +108,7 @@
                   <Font name="Dialog" size="14" style="1"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/img/pesquisa-vetorial.png"/>
+                  <Image iconType="3" name="/img/view_32.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Pesquisa Modelo Vetorial"/>
               </Properties>
@@ -113,7 +122,7 @@
                   <Font name="Dialog" size="14" style="1"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/img/pesquisa-booleana.png"/>
+                  <Image iconType="3" name="/img/srch_32.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Pesquisa Modelo Probabilista"/>
               </Properties>
@@ -127,7 +136,7 @@
                   <Font name="Dialog" size="14" style="1"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/img/pesquisa-vetorial.png"/>
+                  <Image iconType="3" name="/img/view_32.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Pesquisa Probabilista com Documentos Relevantes"/>
               </Properties>
@@ -172,7 +181,7 @@
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jdpPrincipal" alignment="0" pref="720" max="32767" attributes="0"/>
+          <Component id="jdpPrincipal" alignment="0" pref="714" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -203,7 +212,7 @@
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace pref="85" max="32767" attributes="0"/>
+                  <EmptySpace pref="79" max="32767" attributes="0"/>
                   <Component id="jlOrgImg" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
               </Group>

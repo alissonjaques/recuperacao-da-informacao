@@ -4,6 +4,7 @@ import controle.Buscador;
 import controle.Indexador;
 import java.io.File;
 import java.util.ArrayList;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -19,6 +20,7 @@ public class TelaBuscaBooleana extends javax.swing.JInternalFrame {
      * Creates new form PesquisaBooleana
      */
     public TelaBuscaBooleana() {
+        this.setFrameIcon(new ImageIcon("src\\img\\auditoria_32.png"));
         documentosEncontrados = new ArrayList<>();
         initComponents();
     }
@@ -40,13 +42,14 @@ public class TelaBuscaBooleana extends javax.swing.JInternalFrame {
         jldigitepc = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTDocumentosRetornados = new javax.swing.JTable();
-        jbsair = new javax.swing.JButton();
 
+        setClosable(true);
         setIconifiable(true);
+        setMaximizable(true);
         setTitle("Pesquisa Booleana");
         setFont(new java.awt.Font("Aaux ProMedium SC", 0, 18)); // NOI18N
 
-        jttextoconsulta.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jttextoconsulta.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jttextoconsulta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jttextoconsultaActionPerformed(evt);
@@ -54,10 +57,11 @@ public class TelaBuscaBooleana extends javax.swing.JInternalFrame {
         });
 
         jlconsultadoc.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jlconsultadoc.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jlconsultadoc.setText("Consulta de Documentos:");
 
-        jbconsultar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jbconsultar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/zoom.png"))); // NOI18N
+        jbconsultar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jbconsultar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Search.png"))); // NOI18N
         jbconsultar.setText("Consultar");
         jbconsultar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -65,7 +69,7 @@ public class TelaBuscaBooleana extends javax.swing.JInternalFrame {
             }
         });
 
-        jbLimpar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jbLimpar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jbLimpar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/limpar-limpo.png"))); // NOI18N
         jbLimpar.setText("Limpar");
         jbLimpar.setEnabled(false);
@@ -104,55 +108,39 @@ public class TelaBuscaBooleana extends javax.swing.JInternalFrame {
         });
         jScrollPane1.setViewportView(jTDocumentosRetornados);
 
-        jbsair.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jbsair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/sair.png"))); // NOI18N
-        jbsair.setText("Sair");
-        jbsair.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbsairActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout JPDocLayout = new javax.swing.GroupLayout(JPDoc);
         JPDoc.setLayout(JPDocLayout);
         JPDocLayout.setHorizontalGroup(
             JPDocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(JPDocLayout.createSequentialGroup()
-                .addGap(59, 59, 59)
-                .addGroup(JPDocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jbsair)
-                    .addGroup(JPDocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 563, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(JPDocLayout.createSequentialGroup()
-                            .addComponent(jldigitepc)
-                            .addGroup(JPDocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(JPDocLayout.createSequentialGroup()
-                                    .addGap(50, 50, 50)
-                                    .addComponent(jlconsultadoc))
-                                .addGroup(JPDocLayout.createSequentialGroup()
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(jttextoconsulta, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jbconsultar)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(jbLimpar))))))
-                .addContainerGap(50, Short.MAX_VALUE))
+                .addContainerGap()
+                .addGroup(JPDocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1)
+                    .addGroup(JPDocLayout.createSequentialGroup()
+                        .addComponent(jlconsultadoc, javax.swing.GroupLayout.PREFERRED_SIZE, 642, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(24, Short.MAX_VALUE))
+                    .addGroup(JPDocLayout.createSequentialGroup()
+                        .addComponent(jldigitepc)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jttextoconsulta, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jbconsultar)
+                        .addGap(18, 18, 18)
+                        .addComponent(jbLimpar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         JPDocLayout.setVerticalGroup(
             JPDocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(JPDocLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(29, 29, 29)
                 .addComponent(jlconsultadoc)
-                .addGap(35, 35, 35)
+                .addGap(18, 18, 18)
                 .addGroup(JPDocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jttextoconsulta, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jldigitepc, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jbconsultar)
                     .addComponent(jbLimpar))
-                .addGap(33, 33, 33)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jbsair)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -226,14 +214,6 @@ public class TelaBuscaBooleana extends javax.swing.JInternalFrame {
 
     }//GEN-LAST:event_jbLimparActionPerformed
 
-    private void jbsairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbsairActionPerformed
-        int op = JOptionPane.showConfirmDialog(this, "Deseja mesmo sair?", "Sair da Pesquisa Booleana", JOptionPane.OK_CANCEL_OPTION);
-
-        if (op == 0) {
-            dispose();
-        }
-    }//GEN-LAST:event_jbsairActionPerformed
-
     public void limparTabela() {
         DefaultTableModel dm = (DefaultTableModel) getjTDocumentosRetornados().getModel();
         dm.getDataVector().removeAllElements();
@@ -246,7 +226,6 @@ public class TelaBuscaBooleana extends javax.swing.JInternalFrame {
     private javax.swing.JTable jTDocumentosRetornados;
     private javax.swing.JButton jbLimpar;
     private javax.swing.JButton jbconsultar;
-    private javax.swing.JButton jbsair;
     private javax.swing.JLabel jlconsultadoc;
     private javax.swing.JLabel jldigitepc;
     private javax.swing.JTextField jttextoconsulta;
@@ -334,20 +313,6 @@ public class TelaBuscaBooleana extends javax.swing.JInternalFrame {
      */
     public void setJbconsultar(javax.swing.JButton jbconsultar) {
         this.jbconsultar = jbconsultar;
-    }
-
-    /**
-     * @return the jbsair
-     */
-    public javax.swing.JButton getJbsair() {
-        return jbsair;
-    }
-
-    /**
-     * @param jbsair the jbsair to set
-     */
-    public void setJbsair(javax.swing.JButton jbsair) {
-        this.jbsair = jbsair;
     }
 
     /**

@@ -1,7 +1,10 @@
 package telas;
 
+import java.awt.Toolkit;
 import javax.swing.JInternalFrame;
 import javax.swing.JOptionPane;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
 
 /**
  * A classe TelaPrincipal representa uma interface gráfica que possibilita a
@@ -23,9 +26,17 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     /**
      * Creates new form TelaPrincipal
+     * @throws java.lang.ClassNotFoundException
+     * @throws java.lang.InstantiationException
+     * @throws java.lang.IllegalAccessException
+     * @throws javax.swing.UnsupportedLookAndFeelException
      */
-    public TelaPrincipal() {
+    public TelaPrincipal() throws ClassNotFoundException, InstantiationException, 
+            IllegalAccessException, UnsupportedLookAndFeelException {
+        this.setIconImage(Toolkit.getDefaultToolkit().getImage("src\\img\\auditoria_32.png"));
         initComponents();
+        String lookAndFeelClassName = UIManager.getSystemLookAndFeelClassName();
+        UIManager.setLookAndFeel(lookAndFeelClassName);
     }
 
     /**
@@ -92,16 +103,17 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jdpPrincipalLayout.setVerticalGroup(
             jdpPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jdpPrincipalLayout.createSequentialGroup()
-                .addContainerGap(85, Short.MAX_VALUE)
+                .addContainerGap(79, Short.MAX_VALUE)
                 .addComponent(jlOrgImg)
                 .addGap(69, 69, 69))
         );
 
+        jmLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/PessoaFisica.png"))); // NOI18N
         jmLogin.setText("Login");
         jmLogin.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
 
         jmiLogin.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jmiLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/login (1).png"))); // NOI18N
+        jmiLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/user32.png"))); // NOI18N
         jmiLogin.setText("Login");
         jmiLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -111,7 +123,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jmLogin.add(jmiLogin);
 
         jmiSair.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jmiSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/sair (1).png"))); // NOI18N
+        jmiSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/close_32.png"))); // NOI18N
         jmiSair.setText("Sair");
         jmiSair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -122,6 +134,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jmbMenus.add(jmLogin);
 
+        jmIndiceInvertido.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/refresh_1.png"))); // NOI18N
         jmIndiceInvertido.setText("Índice Invertido");
         jmIndiceInvertido.setEnabled(false);
         jmIndiceInvertido.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
@@ -132,7 +145,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
 
         jmiGerarIndiceInvertido.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jmiGerarIndiceInvertido.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/gerirJM.png"))); // NOI18N
+        jmiGerarIndiceInvertido.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/report_32.png"))); // NOI18N
         jmiGerarIndiceInvertido.setText("Gerar");
         jmiGerarIndiceInvertido.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -143,12 +156,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jmbMenus.add(jmIndiceInvertido);
 
+        jmconsuta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/pesquisa32.png"))); // NOI18N
         jmconsuta.setText("Consulta");
         jmconsuta.setEnabled(false);
         jmconsuta.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
 
         jmigerarconsulta.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jmigerarconsulta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/pesquisa-booleana.png"))); // NOI18N
+        jmigerarconsulta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/srch_32.png"))); // NOI18N
         jmigerarconsulta.setText("Pesquisa Booleana");
         jmigerarconsulta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -158,7 +172,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jmconsuta.add(jmigerarconsulta);
 
         jmPesquisaVetorial.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jmPesquisaVetorial.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/pesquisa-vetorial.png"))); // NOI18N
+        jmPesquisaVetorial.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/view_32.png"))); // NOI18N
         jmPesquisaVetorial.setText("Pesquisa Modelo Vetorial");
         jmPesquisaVetorial.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -168,7 +182,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jmconsuta.add(jmPesquisaVetorial);
 
         jmiBuscaProbabilista.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jmiBuscaProbabilista.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/pesquisa-booleana.png"))); // NOI18N
+        jmiBuscaProbabilista.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/srch_32.png"))); // NOI18N
         jmiBuscaProbabilista.setText("Pesquisa Modelo Probabilista");
         jmiBuscaProbabilista.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -178,7 +192,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jmconsuta.add(jmiBuscaProbabilista);
 
         jmiDocRelevantes.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jmiDocRelevantes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/pesquisa-vetorial.png"))); // NOI18N
+        jmiDocRelevantes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/view_32.png"))); // NOI18N
         jmiDocRelevantes.setText("Pesquisa Probabilista com Documentos Relevantes");
         jmiDocRelevantes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -201,7 +215,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jdpPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, 720, Short.MAX_VALUE)
+            .addComponent(jdpPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, 714, Short.MAX_VALUE)
         );
 
         pack();

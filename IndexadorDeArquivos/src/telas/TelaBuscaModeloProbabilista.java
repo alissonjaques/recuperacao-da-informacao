@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -23,6 +24,7 @@ public class TelaBuscaModeloProbabilista extends javax.swing.JInternalFrame {
      * Creates new form TelaBuscaModeloProbabilista
      */
     public TelaBuscaModeloProbabilista() {
+        this.setFrameIcon(new ImageIcon("src\\img\\auditoria_32.png"));
         initComponents();
     }
 
@@ -61,11 +63,13 @@ public class TelaBuscaModeloProbabilista extends javax.swing.JInternalFrame {
         jldigitepc = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTDocumentosRetornados = new javax.swing.JTable();
-        jbsair = new javax.swing.JButton();
 
+        setClosable(true);
+        setIconifiable(true);
+        setMaximizable(true);
         setTitle("Busca Modelo Probabilista");
 
-        jttextoconsulta.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jttextoconsulta.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jttextoconsulta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jttextoconsultaActionPerformed(evt);
@@ -73,10 +77,11 @@ public class TelaBuscaModeloProbabilista extends javax.swing.JInternalFrame {
         });
 
         jlconsultadoc.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jlconsultadoc.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jlconsultadoc.setText("Consulta de Documentos:");
 
-        jbconsultar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jbconsultar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/zoom.png"))); // NOI18N
+        jbconsultar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jbconsultar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Search.png"))); // NOI18N
         jbconsultar.setText("Consultar");
         jbconsultar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -84,7 +89,7 @@ public class TelaBuscaModeloProbabilista extends javax.swing.JInternalFrame {
             }
         });
 
-        jbLimpar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jbLimpar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jbLimpar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/limpar-limpo.png"))); // NOI18N
         jbLimpar.setText("Limpar");
         jbLimpar.setEnabled(false);
@@ -94,7 +99,7 @@ public class TelaBuscaModeloProbabilista extends javax.swing.JInternalFrame {
             }
         });
 
-        jldigitepc.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jldigitepc.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jldigitepc.setText("Digite para consultar:");
 
         jTDocumentosRetornados.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -123,15 +128,6 @@ public class TelaBuscaModeloProbabilista extends javax.swing.JInternalFrame {
         });
         jScrollPane1.setViewportView(jTDocumentosRetornados);
 
-        jbsair.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jbsair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/sair.png"))); // NOI18N
-        jbsair.setText("Sair");
-        jbsair.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbsairActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout JPDocLayout = new javax.swing.GroupLayout(JPDoc);
         JPDoc.setLayout(JPDocLayout);
         JPDocLayout.setHorizontalGroup(
@@ -139,40 +135,30 @@ public class TelaBuscaModeloProbabilista extends javax.swing.JInternalFrame {
             .addGroup(JPDocLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(JPDocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JPDocLayout.createSequentialGroup()
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 629, Short.MAX_VALUE)
+                    .addGroup(JPDocLayout.createSequentialGroup()
                         .addComponent(jldigitepc)
                         .addGap(26, 26, 26)
-                        .addComponent(jttextoconsulta, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 43, Short.MAX_VALUE)
+                        .addComponent(jttextoconsulta)
+                        .addGap(18, 18, 18)
                         .addComponent(jbconsultar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jbLimpar, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 6, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JPDocLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(JPDocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JPDocLayout.createSequentialGroup()
-                                .addComponent(jlconsultadoc)
-                                .addGap(203, 203, 203))
-                            .addComponent(jbsair, javax.swing.GroupLayout.Alignment.TRAILING))))
-                .addContainerGap())
+                        .addGap(24, 24, 24)
+                        .addComponent(jbLimpar, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jlconsultadoc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         JPDocLayout.setVerticalGroup(
             JPDocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(JPDocLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(29, 29, 29)
                 .addComponent(jlconsultadoc)
-                .addGap(35, 35, 35)
+                .addGap(18, 18, 18)
                 .addGroup(JPDocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jttextoconsulta, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jldigitepc, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jbconsultar)
                     .addComponent(jbLimpar))
-                .addGap(50, 50, 50)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28)
-                .addComponent(jbsair)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -225,14 +211,6 @@ public class TelaBuscaModeloProbabilista extends javax.swing.JInternalFrame {
         getJbconsultar().setEnabled(true);
     }//GEN-LAST:event_jbLimparActionPerformed
 
-    private void jbsairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbsairActionPerformed
-        int op = JOptionPane.showConfirmDialog(this, "Deseja mesmo sair?", "Sair da Pesquisa Vetorial", JOptionPane.OK_CANCEL_OPTION);
-
-        if (op == 0) {
-            dispose();
-        }
-    }//GEN-LAST:event_jbsairActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel JPDoc;
@@ -240,7 +218,6 @@ public class TelaBuscaModeloProbabilista extends javax.swing.JInternalFrame {
     private javax.swing.JTable jTDocumentosRetornados;
     private javax.swing.JButton jbLimpar;
     private javax.swing.JButton jbconsultar;
-    private javax.swing.JButton jbsair;
     private javax.swing.JLabel jlconsultadoc;
     private javax.swing.JLabel jldigitepc;
     private javax.swing.JTextField jttextoconsulta;
@@ -314,20 +291,6 @@ public class TelaBuscaModeloProbabilista extends javax.swing.JInternalFrame {
      */
     public void setJbconsultar(javax.swing.JButton jbconsultar) {
         this.jbconsultar = jbconsultar;
-    }
-
-    /**
-     * @return the jbsair
-     */
-    public javax.swing.JButton getJbsair() {
-        return jbsair;
-    }
-
-    /**
-     * @param jbsair the jbsair to set
-     */
-    public void setJbsair(javax.swing.JButton jbsair) {
-        this.jbsair = jbsair;
     }
 
     /**

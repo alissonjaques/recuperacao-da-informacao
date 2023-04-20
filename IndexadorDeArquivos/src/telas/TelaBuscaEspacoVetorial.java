@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -23,6 +24,7 @@ public class TelaBuscaEspacoVetorial extends javax.swing.JInternalFrame {
      * Creates new form TelaBuscaEspacoVetorial
      */
     public TelaBuscaEspacoVetorial() {
+        this.setFrameIcon(new ImageIcon("src\\img\\auditoria_32.png"));
         initComponents();
     }
 
@@ -49,12 +51,13 @@ public class TelaBuscaEspacoVetorial extends javax.swing.JInternalFrame {
         jldigitepc = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTDocumentosRetornados = new javax.swing.JTable();
-        jbsair = new javax.swing.JButton();
 
+        setClosable(true);
         setIconifiable(true);
+        setMaximizable(true);
         setTitle("Pesquisa Modelo Vetorial");
 
-        jttextoconsulta.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jttextoconsulta.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jttextoconsulta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jttextoconsultaActionPerformed(evt);
@@ -62,10 +65,11 @@ public class TelaBuscaEspacoVetorial extends javax.swing.JInternalFrame {
         });
 
         jlconsultadoc.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jlconsultadoc.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jlconsultadoc.setText("Consulta de Documentos:");
 
-        jbconsultar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jbconsultar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/zoom.png"))); // NOI18N
+        jbconsultar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jbconsultar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Search.png"))); // NOI18N
         jbconsultar.setText("Consultar");
         jbconsultar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -73,7 +77,7 @@ public class TelaBuscaEspacoVetorial extends javax.swing.JInternalFrame {
             }
         });
 
-        jbLimpar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jbLimpar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jbLimpar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/limpar-limpo.png"))); // NOI18N
         jbLimpar.setText("Limpar");
         jbLimpar.setEnabled(false);
@@ -83,7 +87,7 @@ public class TelaBuscaEspacoVetorial extends javax.swing.JInternalFrame {
             }
         });
 
-        jldigitepc.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jldigitepc.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jldigitepc.setText("Digite para consultar:");
 
         jTDocumentosRetornados.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -112,58 +116,41 @@ public class TelaBuscaEspacoVetorial extends javax.swing.JInternalFrame {
         });
         jScrollPane1.setViewportView(jTDocumentosRetornados);
 
-        jbsair.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jbsair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/sair.png"))); // NOI18N
-        jbsair.setText("Sair");
-        jbsair.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbsairActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout JPDocLayout = new javax.swing.GroupLayout(JPDoc);
         JPDoc.setLayout(JPDocLayout);
         JPDocLayout.setHorizontalGroup(
             JPDocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(JPDocLayout.createSequentialGroup()
-                .addGap(0, 46, Short.MAX_VALUE)
+                .addContainerGap()
                 .addGroup(JPDocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JPDocLayout.createSequentialGroup()
-                        .addGroup(JPDocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jbsair, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JPDocLayout.createSequentialGroup()
-                                .addComponent(jlconsultadoc)
-                                .addGap(203, 203, 203)))
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JPDocLayout.createSequentialGroup()
-                        .addGroup(JPDocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(JPDocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jlconsultadoc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(JPDocLayout.createSequentialGroup()
                                 .addComponent(jldigitepc)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jttextoconsulta, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
+                                .addComponent(jttextoconsulta, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
                                 .addComponent(jbconsultar)
                                 .addGap(18, 18, 18)
-                                .addComponent(jbLimpar))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 563, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(25, 25, 25))))
+                                .addComponent(jbLimpar)))
+                        .addContainerGap())))
         );
         JPDocLayout.setVerticalGroup(
             JPDocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(JPDocLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(20, 20, 20)
                 .addComponent(jlconsultadoc)
-                .addGap(35, 35, 35)
+                .addGap(27, 27, 27)
                 .addGroup(JPDocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jttextoconsulta, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jldigitepc, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jbconsultar)
                     .addComponent(jbLimpar))
-                .addGap(39, 39, 39)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 317, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jbsair)
-                .addGap(22, 22, 22))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 338, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -227,14 +214,6 @@ public class TelaBuscaEspacoVetorial extends javax.swing.JInternalFrame {
         getJbconsultar().setEnabled(true);
     }//GEN-LAST:event_jbLimparActionPerformed
 
-    private void jbsairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbsairActionPerformed
-        int op = JOptionPane.showConfirmDialog(this, "Deseja mesmo sair?", "Sair da Pesquisa Vetorial", JOptionPane.OK_CANCEL_OPTION);
-
-        if (op == 0) {
-            dispose();
-        }
-    }//GEN-LAST:event_jbsairActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel JPDoc;
@@ -242,7 +221,6 @@ public class TelaBuscaEspacoVetorial extends javax.swing.JInternalFrame {
     private javax.swing.JTable jTDocumentosRetornados;
     private javax.swing.JButton jbLimpar;
     private javax.swing.JButton jbconsultar;
-    private javax.swing.JButton jbsair;
     private javax.swing.JLabel jlconsultadoc;
     private javax.swing.JLabel jldigitepc;
     private javax.swing.JTextField jttextoconsulta;
@@ -316,20 +294,6 @@ public class TelaBuscaEspacoVetorial extends javax.swing.JInternalFrame {
      */
     public void setJbconsultar(javax.swing.JButton jbconsultar) {
         this.jbconsultar = jbconsultar;
-    }
-
-    /**
-     * @return the jbsair
-     */
-    public javax.swing.JButton getJbsair() {
-        return jbsair;
-    }
-
-    /**
-     * @param jbsair the jbsair to set
-     */
-    public void setJbsair(javax.swing.JButton jbsair) {
-        this.jbsair = jbsair;
     }
 
     /**
