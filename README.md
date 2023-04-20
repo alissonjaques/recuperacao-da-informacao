@@ -18,6 +18,6 @@ A pesquisa booleana foi construida com base na biblioteca Apache Lucene. Esta bi
 
 ## Modo de execução
 
-No diretório do projeto abrir o arquivo IndexadorDeArquivos.jar 
-Acesso: login → admin, senha → admin
+No diretório do projeto abrir o arquivo IndexadorDeArquivos.jar /
+Acesso: login → admin, senha → admin /
 IDE para rodar projeto: Netbeans
