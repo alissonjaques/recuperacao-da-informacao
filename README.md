@@ -1,4 +1,4 @@
-# Recuperação e Indexação de Informação
+# Recuperação e Indexação da Informação
 
 Pesquisa Vetorial, Booleana e Probabilista utilizando Java com Apache Lucene.
 
@@ -8,7 +8,7 @@ A pesquisa booleana foi construida com base na biblioteca Apache Lucene. Esta bi
 
 | :placard: Vitrine.Dev |     |
 | -------------  | --- |
-| :sparkles: Nome        | **Recuperação e Indexação de Informação**
+| :sparkles: Nome        | **Recuperação e Indexação da Informação**
 | :label: Tecnologias | java, apache lucene, pesquisa booleana, pesquisa probabilista, índice invertido e pesquisa vetorial
 
 <!-- Inserir imagem com a #vitrinedev ao final do link -->
