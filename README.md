@@ -12,8 +12,8 @@ A pesquisa booleana foi construida com base na biblioteca Apache Lucene. Esta bi
 | :label: Tecnologias | java, apache lucene, pesquisa booleana, pesquisa probabilista, índice invertido e pesquisa vetorial
 
 <!-- Inserir imagem com a #vitrinedev ao final do link -->
-![alt text](https://github.com/alissonjaques/imagens-aplicacoes/blob/main/recuperacao-informacao/tela-termos.png#vitrinedev)
-![alt text](https://github.com/alissonjaques/imagens-aplicacoes/blob/main/recuperacao-informacao/login.png#vitrinedev)
+![alt text](https://github.com/alissonjaques/imagens-aplicacoes/blob/main/recuperacao-informacao/tela-termos.png)
+![alt text](https://github.com/alissonjaques/imagens-aplicacoes/blob/main/recuperacao-informacao/login.png)
 ![alt text](https://github.com/alissonjaques/imagens-aplicacoes/blob/main/recuperacao-informacao/pesquisa-booleana.png#vitrinedev)
 
 ## Modo de execução
